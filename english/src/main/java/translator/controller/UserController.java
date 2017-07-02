@@ -1,5 +1,6 @@
 package translator.controller;
 
+import translator.DataLayer.DbEntities.DbUser;
 import translator.annotation.RequestMapping;
 import translator.entity.User;
 import translator.service.UserService;
@@ -15,7 +16,12 @@ public class UserController {
 	}
 
 	@RequestMapping(url = "users/find")
-	public User findUserById(String id) {
+	public DbUser findUserById(int id) {
+		return userService.findUserById(id);
+	}
+
+	@RequestMapping(url = "users/find")
+	public DbUser findUserByName(int id) {
 		return userService.findUserById(id);
 	}
 

@@ -20,7 +20,7 @@ public class JDBCFactory {
 
         try {
             connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3306/angl","root", "olala");
+                    .getConnection("jdbc:mysql://localhost:3306/tests?autoReconnect=true&useSSL=false","root", "lipski");
 
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");

@@ -1,19 +1,21 @@
 package translator.dao;
 
+import translator.DataLayer.DbEntities.DbUser;
 import translator.entity.User;
 import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by Lenovo on 08.06.2017.
  */
-public class UserDAO extends AbstractDAO<User> {
+public class UserDAO extends AbstractDAO<User,String> {
 	private Logger logger = Logger.getLogger(this.getClass());
 	private String SAVE_QUERY = "INSERT INTO `users` (`name`, `age`) VALUES (?, ?)";
-	private String SELECT_BY_ID_QUERY = "SELECT `id`, `name`, `age` FROM `users` WHERE id=?";
+	private String SELECT_BY_ID_QUERY = "SELECT Id, UserName, Password FROM users WHERE Id=?";
 
 	public boolean save(User user) {
 		try (PreparedStatement st = connection.prepareStatement(SAVE_QUERY)) {
@@ -49,4 +51,11 @@ public class UserDAO extends AbstractDAO<User> {
 	}
 
 
+	public Iterable<User> getAll(){
+		return new ArrayList<User>();
+	}
+
+	public Iterable<User> getByField(String userName) {
+		return new ArrayList<User>();
+	}
 }

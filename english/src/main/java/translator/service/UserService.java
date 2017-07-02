@@ -1,30 +1,33 @@
 package translator.service;
 
-import translator.dao.UserDAO;
-import translator.entity.User;
-
-import static translator.util.Validator.*;
+import translator.DataLayer.DataRetrievers.UserRetriever;
+import translator.DataLayer.DbEntities.DbUser;
 
 /**
  * Created by Lenovo on 08.06.2017.
  */
 public class UserService {
-	private UserDAO userDAO;
+	private UserRetriever userRetriever;
 
-	public UserService(UserDAO userDAO) {
-		this.userDAO = userDAO;
+	public UserService(UserRetriever userRetriever) {
+		this.userRetriever = userRetriever;
 	}
 
-	public User findUserById(String id) {
-		return userDAO.find(validateLong(id));
+	public DbUser findUserById(int id) {
+		return userRetriever.find(id);
 	}
 
-	public String saveUser(String name, String age) {
-		User user = new User();
-		user.setName(name);
-		user.setAge(validateInt(age));
+	public Iterable<DbUser> findUserById(String userName) {
+		return userRetriever.getByField(userName);
+	}
 
-		boolean result = userDAO.save(user);
+
+	public String saveUser(String name, String password) {
+		DbUser user = new DbUser();
+		user.userName=name;
+		user.password=password;
+
+		boolean result = userRetriever.save(user);
 		return result ? "User created" : "User not created";
 	}
 }
