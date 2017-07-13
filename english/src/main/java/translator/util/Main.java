@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import translator.web.LoginMenu;
 import translator.web.TopicChoice;
+import translator.web.Welcome;
 
 /**
  * Created by Lenovo on 10.06.2017.
@@ -52,6 +53,9 @@ public class Main {
 //		WordUtil wordUtil = new WordUtil(1,1);
 //		wordUtil.CheckWord();
 //
+		Welcome welcome = new Welcome();
+		welcome.ViewWelcome();
+
 		LoginMenu loginMenu = new LoginMenu();
 		loginMenu.ViewLoginMenu();
 
