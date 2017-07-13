@@ -14,18 +14,31 @@ import java.util.ArrayList;
 public class TopicRetriever extends AbstractDAO<DbTopic, String> {
     private Logger logger = Logger.getLogger(this.getClass());
     private String SAVE_QUERY = "INSERT INTO topics (TopicName) VALUES (?)";
-    private String SELECT_BY_ID_QUERY = "SELECT TopicId, TopicName FROM topics WHERE TopicId=?";
+    private String UPDATE_QUERY = "UPDATE topics SET TopicName=? WHERE TopicsId=?";
+    private String SELECT_BY_ID_QUERY = "SELECT TopicsId, TopicName FROM topics WHERE TopicsId=?";
     private String SELECT_ALL_QUERY = "SELECT * FROM topics";
     private String SELECT_BY_TOPICNAME = "SELECT * FROM topics WHERE TopicName=?";
 
     public boolean save(DbTopic topic) {
         try (PreparedStatement st = connection.prepareStatement(SAVE_QUERY)) {
             st.setString(1, topic.topicName);
-
             st.executeUpdate();
             return true;
         } catch (SQLException e) {
             logger.error("Can't save topic with name: " + topic.topicName);
+            return false;
+        }
+    }
+
+    public boolean update(DbTopic dbTopic) {
+        try (PreparedStatement st = connection.prepareStatement(UPDATE_QUERY)) {
+            st.setString(1, dbTopic.topicName);
+            st.setInt(2, dbTopic.topicId);
+
+            st.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            logger.error("Can't update topic with id: " + dbTopic.topicId);
             return false;
         }
     }

@@ -58,4 +58,7 @@ public class UserDAO extends AbstractDAO<User,String> {
 	public Iterable<User> getByField(String userName) {
 		return new ArrayList<User>();
 	}
+	public boolean update(User user) {
+		return true;
+	}
 }

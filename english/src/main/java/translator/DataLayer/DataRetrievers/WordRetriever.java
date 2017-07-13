@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class WordRetriever extends AbstractDAO<DbWord, Integer> {
     private Logger logger = Logger.getLogger(this.getClass());
     private String SAVE_QUERY = "INSERT INTO words (TopicId, EnglishWord, RussianWord) VALUES (?, ?, ?)";
+    private String UPDATE_QUERY = "UPDATE words SET TopicId=?, UserWord=?, RussianWord=? WHERE WordId=?";
     private String SELECT_BY_ID_QUERY = "SELECT WordId, TopicId, EnglishWord, RussianWord FROM words WHERE WordId=?";
     private String SELECT_ALL_QUERY = "SELECT * FROM words";
     private String SELECT_BY_TOPICID = "SELECT * FROM words WHERE TopicId=?";
@@ -28,6 +29,21 @@ public class WordRetriever extends AbstractDAO<DbWord, Integer> {
             return true;
         } catch (SQLException e) {
             logger.error("Can't save user with name: " + word.englishWord);
+            return false;
+        }
+    }
+
+    public boolean update(DbWord dbWord) {
+        try (PreparedStatement st = connection.prepareStatement(UPDATE_QUERY)) {
+            st.setInt(1, dbWord.topicId);
+            st.setString(2, dbWord.englishWord);
+            st.setString(3, dbWord.russianWord);
+            st.setInt(4, dbWord.wordId);
+
+            st.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            logger.error("Can't update word with user id: " + dbWord.wordId);
             return false;
         }
     }
