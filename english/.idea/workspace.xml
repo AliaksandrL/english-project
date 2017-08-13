@@ -2,68 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="765e9af3-0d79-4b6f-a2f0-fffbb179bde8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/controller/TopicController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/controller/WordController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/exceptions/IllegalParameterException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/exceptions/IllegalRequestException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/util/StringUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/web/Controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/web/HttpMethod.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/web/HttpStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/web/ModelAndView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/translator/web/View.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/translator/dao/UserDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/translator/entity/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/translator/entity/Word.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/translator/dao/UserDAOTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/dao/UserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/entity/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/entity/Word.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/web/LoginMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/web/TopicChoice.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/web/UserLogin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/web/UserRegistration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/translator/web/Welcome.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/translator/dao/UserDAOTest.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/translator/web/LoginMenu.java" afterPath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/LoginMenu.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/translator/web/TopicChoice.java" afterPath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/translator/web/UserLogin.java" afterPath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserLogin.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/translator/web/UserRegistration.java" afterPath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/translator/web/Welcome.java" afterPath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/Welcome.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/TopicRetriever.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/TopicRetriever.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/UserRetriever.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/UserRetriever.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/UsersWordsRetriever.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/UsersWordsRetriever.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/WordRetriever.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DataRetrievers/WordRetriever.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbTopic.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbTopic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbUser.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbUserWord.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbUserWord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbWord.class" afterPath="$PROJECT_DIR$/target/classes/translator/DataLayer/DbEntities/DbWord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/annotation/RequestMapping.class" afterPath="$PROJECT_DIR$/target/classes/translator/annotation/RequestMapping.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/translator/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/dao/AbstractDAO.class" afterPath="$PROJECT_DIR$/target/classes/translator/dao/AbstractDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/translator/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/util/JDBCFactory.class" afterPath="$PROJECT_DIR$/target/classes/translator/util/JDBCFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/util/Main.class" afterPath="$PROJECT_DIR$/target/classes/translator/util/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/util/StaticValues.class" afterPath="$PROJECT_DIR$/target/classes/translator/util/StaticValues.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/util/Validator.class" afterPath="$PROJECT_DIR$/target/classes/translator/util/Validator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/util/Word.class" afterPath="$PROJECT_DIR$/target/classes/translator/util/Word.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/translator/util/WordUtil.class" afterPath="$PROJECT_DIR$/target/classes/translator/util/WordUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/translator/util/JDBCFactoryTest.class" afterPath="$PROJECT_DIR$/target/test-classes/translator/util/JDBCFactoryTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/english.iml" afterPath="$PROJECT_DIR$/english.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DataRetrievers/UserRetriever.java" afterPath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DataRetrievers/UserRetriever.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbTopic.java" afterPath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbTopic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbUser.java" afterPath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbUserWord.java" afterPath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbUserWord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbWord.java" afterPath="$PROJECT_DIR$/src/main/java/translator/DataLayer/DbEntities/DbWord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/annotation/RequestMapping.java" afterPath="$PROJECT_DIR$/src/main/java/translator/annotation/RequestMapping.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/translator/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java" afterPath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java" afterPath="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java" afterPath="$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/controller/WordController.java" afterPath="$PROJECT_DIR$/src/main/java/translator/controller/WordController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/util/Main.java" afterPath="$PROJECT_DIR$/src/main/java/translator/util/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/util/WordUtil.java" afterPath="$PROJECT_DIR$/src/main/java/translator/util/WordUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java" afterPath="$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -94,125 +38,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding>
-                <marker date="1502562542047" expanded="false" signature="1904:1922" ph="&lt;~&gt;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopicChoice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="94" lean-forward="false" selection-start-line="40" selection-start-column="94" selection-end-line="40" selection-end-column="94" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dispatcher.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/StringUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-              <folding>
-                <element signature="e#164#165#0" expanded="true" />
-                <element signature="e#214#215#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/WordController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="27" column="52" lean-forward="false" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserWordController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRegistration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/WordUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#481#487#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordRetriever.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/translator/DataLayer/DataRetrievers/WordRetriever.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-              <folding>
-                <marker date="1499592568385" expanded="true" signature="494:564" ph="INSERT INTO words... " />
-                <marker date="1499592568385" expanded="true" signature="602:670" ph="UPDATE words... " />
-                <marker date="1499592568385" expanded="true" signature="714:788" ph="SELECT WordI... words" />
-                <marker date="1499592568385" expanded="true" signature="830:849" ph="SELECT * FRO... words" />
-                <marker date="1499592568385" expanded="true" signature="892:927" ph="SELECT * FRO... words" />
               </folding>
             </state>
           </provider>
@@ -294,18 +126,18 @@
         <option value="$PROJECT_DIR$/src/main/java/translator/IllegalRequestException.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/exceptions/IllegalRequestException.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/web/ModelAndView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/translator/util/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/controller/DbUserWordController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/translator/controller/WordController.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/util/WordUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/web/View.java" />
-        <option value="$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java" />
         <option value="$PROJECT_DIR$/src/main/java/translator/controller/TopicController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/translator/controller/WordController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/translator/util/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java" />
       </list>
     </option>
   </component>
@@ -1423,7 +1255,7 @@
       <workItem from="1501600583811" duration="2163000" />
       <workItem from="1501777198676" duration="10000000" />
       <workItem from="1502556604604" duration="18257000" />
-      <workItem from="1502645856693" duration="439000" />
+      <workItem from="1502645856693" duration="1085000" />
     </task>
     <servers />
   </component>
@@ -1460,7 +1292,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166912000" />
+    <option name="totallyTimeSpent" value="167558000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1544,54 +1376,6 @@
           <properties />
           <option name="timeStamp" value="163" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java</url>
-          <line>96</line>
-          <properties />
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="172" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="173" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="174" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="176" />
     </breakpoint-manager>
@@ -1655,6 +1439,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1662,6 +1447,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="43" lean-forward="false" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1669,6 +1455,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1758,6 +1545,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="13" column="40" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1781,6 +1569,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1827,36 +1616,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/DataLayer/DataRetrievers/WordRetriever.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding>
-            <marker date="1499592568385" expanded="true" signature="494:564" ph="INSERT INTO words... " />
-            <marker date="1499592568385" expanded="true" signature="602:670" ph="UPDATE words... " />
-            <marker date="1499592568385" expanded="true" signature="714:788" ph="SELECT WordI... words" />
-            <marker date="1499592568385" expanded="true" signature="830:849" ph="SELECT * FRO... words" />
-            <marker date="1499592568385" expanded="true" signature="892:927" ph="SELECT * FRO... words" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserLogin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="68" column="109" lean-forward="false" selection-start-line="68" selection-start-column="109" selection-end-line="68" selection-end-column="116" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/WordUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#481#487#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1867,68 +1631,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/translator/DataLayer/DataRetrievers/TopicRetriever.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="897">
           <caret line="84" column="29" lean-forward="false" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/WordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="52" lean-forward="false" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <marker date="1502562542047" expanded="false" signature="1904:1922" ph="&lt;~&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="94" lean-forward="false" selection-start-line="40" selection-start-column="94" selection-end-line="40" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1942,21 +1648,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/WordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/TopicChoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-782">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#164#165#0" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/UserWordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/BusinessLayer/UserRegistration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/DataLayer/DataRetrievers/WordRetriever.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding>
+            <marker date="1499592568385" expanded="true" signature="494:564" ph="INSERT INTO words... " />
+            <marker date="1499592568385" expanded="true" signature="602:670" ph="UPDATE words... " />
+            <marker date="1499592568385" expanded="true" signature="714:788" ph="SELECT WordI... words" />
+            <marker date="1499592568385" expanded="true" signature="830:849" ph="SELECT * FRO... words" />
+            <marker date="1499592568385" expanded="true" signature="892:927" ph="SELECT * FRO... words" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/WordUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#481#487#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/translator/web/Dispatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="37" lean-forward="true" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/translator/util/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

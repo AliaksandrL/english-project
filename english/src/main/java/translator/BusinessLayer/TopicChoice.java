@@ -7,7 +7,6 @@ import translator.util.StaticValues;
 import translator.web.Dispatcher;
 import translator.web.HttpMethod;
 import translator.web.View;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;

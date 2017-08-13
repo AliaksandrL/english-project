@@ -1,8 +1,6 @@
 package translator.controller;
 
-import translator.DataLayer.DataRetrievers.UsersWordsRetriever;
 import translator.DataLayer.DataRetrievers.WordRetriever;
-import translator.DataLayer.DbEntities.DbUserWord;
 import translator.DataLayer.DbEntities.DbWord;
 import translator.annotation.RequestMapping;
 import translator.web.Controller;

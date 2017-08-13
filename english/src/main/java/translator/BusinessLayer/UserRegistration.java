@@ -4,9 +4,6 @@ import translator.DataLayer.DataRetrievers.UserRetriever;
 import translator.DataLayer.DbEntities.DbUser;
 import translator.web.Dispatcher;
 import translator.web.HttpMethod;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
