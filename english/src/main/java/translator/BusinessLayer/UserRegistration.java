@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Администратор on 23.06.2017.
  */
-public class UserRegistration {
+public class  UserRegistration {
     private String errorMsg = null;
     public DbUser newUser;
 
