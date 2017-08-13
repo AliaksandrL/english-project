@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import translator.DataLayer.DbEntities.DbUser;
 import translator.dao.AbstractDAO;
 
+import java.io.Serializable;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

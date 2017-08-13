@@ -1,9 +1,11 @@
 package translator.DataLayer.DbEntities;
 
+import java.io.Serializable;
+
 /**
  * Created by Администратор on 23.06.2017.
  */
-public class DbUserWord {
+public class DbUserWord implements Serializable {
     public int userWordId;
     public int userId;
     public int wordId;

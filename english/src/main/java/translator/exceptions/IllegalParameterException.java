@@ -1,4 +1,4 @@
-package translator;
+package translator.exceptions;
 
 /**
  * Created by Lenovo on 17.06.2017.

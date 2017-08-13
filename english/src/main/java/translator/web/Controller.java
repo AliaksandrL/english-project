@@ -1,4 +1,4 @@
-package belhard.web;
+package translator.web;
 
 public interface Controller {
 }

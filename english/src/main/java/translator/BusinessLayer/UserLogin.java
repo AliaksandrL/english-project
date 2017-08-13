@@ -1,19 +1,29 @@
-package translator.web;
+package translator.BusinessLayer;
 
 import translator.DataLayer.DataRetrievers.UserRetriever;
 import translator.DataLayer.DbEntities.DbUser;
+import translator.web.Dispatcher;
+import translator.web.HttpMethod;
+import translator.web.ModelAndView;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
  * Created by Администратор on 08.07.2017.
  */
 public class UserLogin {
+
+
     private int blockTimeInMinutes = 2;
     private String errorMsg=null;
+    private Dispatcher dispatcher = Dispatcher.getInstance();
+    private Map<String, String[]> paramMap = new HashMap<String, String[]>();
+
     public DbUser user;
 
     public String getErrorMsg() {
@@ -22,9 +32,7 @@ public class UserLogin {
 
     public void ViewUserLogin() {
         Scanner scanner = new Scanner(System.in);
-        UserRetriever userRetriever = new UserRetriever();
         String username, password;
-        Iterable<DbUser> users;
         int attempts;
 
         System.out.println("    *** Для входа введите логин и пароль. ***");
@@ -34,16 +42,19 @@ public class UserLogin {
             System.out.println("    ==================================================");
             System.out.println("        Логин: ");
             username = scanner.next();
-            users = userRetriever.getByField(username);
-            if(users.iterator().hasNext())
-                user = users.iterator().next();
-            Calendar calendar = Calendar.getInstance();
-            Date nowDateTime = new Date(calendar.getTime().getTime());
+
+            paramMap.put("arg0", new String[]{username});
+            user = (DbUser)dispatcher.dispatch("/users/find", HttpMethod.GET, paramMap).getParameter("user");
+            paramMap.clear();
+
             if (user == null) {
                 errorMsg = String.format("Пользователя '%s' нет в системе!", username);
                 System.out.println(errorMsg);
+                return;
             }
-            else if(user.blockTime != null && !nowDateTime.after(user.blockTime)) {
+            Calendar calendar = Calendar.getInstance();
+            Date nowDateTime = new Date(calendar.getTime().getTime());
+            if(user.blockTime != null && !nowDateTime.after(user.blockTime)) {
                 errorMsg = String.format("Пользователь '%s' заблокирован. Блокировка закончится ", username) + user.blockTime;
                 System.out.println(errorMsg);
             }
@@ -55,7 +66,7 @@ public class UserLogin {
                 Calendar calendar = Calendar.getInstance();
                 calendar.add(Calendar.MINUTE, blockTimeInMinutes);
                 user.blockTime = new Timestamp(calendar.getTime().getTime());
-                if(userRetriever.update(user)){
+                if(dispatcher.dispatchGeneric("/users/update", HttpMethod.UPDATE, user).getParameter("user") != null){
                     errorMsg = String.format("Превышено максимальное количество попыток входа. Аккаунт заблокирован на %d минут", blockTimeInMinutes);
                     break;
                 }

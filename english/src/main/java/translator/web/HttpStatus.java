@@ -1,4 +1,4 @@
-package belhard.web;
+package translator.web;
 
 public final class HttpStatus {
 	public static final int PAGE_NOT_FOUND = 404;

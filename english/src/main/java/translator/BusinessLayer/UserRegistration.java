@@ -1,8 +1,12 @@
-package translator.web;
+package translator.BusinessLayer;
 
 import translator.DataLayer.DataRetrievers.UserRetriever;
 import translator.DataLayer.DbEntities.DbUser;
+import translator.web.Dispatcher;
+import translator.web.HttpMethod;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -10,6 +14,7 @@ import java.util.Scanner;
  */
 public class  UserRegistration {
     private String errorMsg = null;
+    private Dispatcher dispatcher = Dispatcher.getInstance();
     public DbUser newUser;
 
     public String getErrorMsg() {
@@ -31,7 +36,7 @@ public class  UserRegistration {
             System.out.println("        Логин: ");
             username = scanner.next();
             newUser.userName = username;
-            for (DbUser curUser : userRetriever.getAll()) {
+            for (DbUser curUser : (Iterable<DbUser>)dispatcher.dispatch("/users/all", HttpMethod.GET, null).getParameter("allUsers")) {
                 if (curUser.userName.equals(newUser.userName)) {
                     errorMsg = String.format("Пользователь '%s' уже зарегестрирован в системе!", newUser.userName);
                     System.out.println(errorMsg);
@@ -49,8 +54,8 @@ public class  UserRegistration {
         password = (scanner.next());
         newUser.password = password;
         System.out.println("    ==================================================");
-        boolean saveResult = userRetriever.save(newUser);
-        if(!saveResult)
+        newUser = (DbUser) dispatcher.dispatchGeneric("/users/registernew", HttpMethod.POST, newUser).getParameter("user");
+        if(newUser == null)
             errorMsg = String.format("Произошла ошибка регистации пользователя '%s'! Попрбуйте снова.", newUser.userName);
     }
 }

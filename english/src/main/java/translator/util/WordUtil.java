@@ -1,15 +1,12 @@
 package translator.util;
 
-import translator.util.Word;
-import translator.DataLayer.DataRetrievers.UsersWordsRetriever;
-import translator.DataLayer.DataRetrievers.WordRetriever;
 import translator.DataLayer.DbEntities.DbUserWord;
 import translator.DataLayer.DbEntities.DbWord;
-import translator.util.StaticValues;
+import translator.web.Dispatcher;
+import translator.web.HttpMethod;
+import translator.web.View;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by Администратор on 29.06.2017.
@@ -19,7 +16,7 @@ public class WordUtil {
     private static Random randomGenerator = new Random();
     private ArrayList<Word> unlearnedWords = new ArrayList<Word>();
     private ArrayList<Word> words = new ArrayList<Word>();
-    private  UsersWordsRetriever usersWordsRetriever  = new UsersWordsRetriever();
+    private Dispatcher dispatcher = Dispatcher.getInstance();
     private Scanner scanner = new Scanner(System.in);
     public String topicName;
 
@@ -32,9 +29,8 @@ public class WordUtil {
 
     public WordUtil(int userId, int topicId)
     {
-        WordRetriever wordRetriever = new WordRetriever();
-        ArrayList<DbWord> dbWords = (ArrayList<DbWord>)wordRetriever.getByField(topicId);
-        ArrayList<DbUserWord> dbUserWords = (ArrayList<DbUserWord>)usersWordsRetriever.getByField(userId);
+        ArrayList<DbWord> dbWords = (ArrayList<DbWord>) dispatcher.dispatchGeneric("/words/find", HttpMethod.GET, topicId).getParameter(View.WORD.toString());
+        ArrayList<DbUserWord> dbUserWords = (ArrayList<DbUserWord>)dispatcher.dispatchGeneric("/userswords/find", HttpMethod.GET, userId).getParameter(View.USERWORD.toString());
         for (int i=0; i<dbWords.size(); i++)
         {
             Word curWord=new Word();
@@ -85,17 +81,21 @@ public class WordUtil {
             dbUserWord.countCorrect = words.get(i).countCurrent;
             dbUserWord.wordId = words.get(i).wordId;
             dbUserWord.userId = StaticValues.getAuthenticatedUserId();
-            ArrayList<DbUserWord> dbUserWords = (ArrayList<DbUserWord>)usersWordsRetriever.getByField(dbUserWord.userId);
+            ArrayList<DbUserWord> dbUserWords =  (ArrayList<DbUserWord>)dispatcher.dispatchGeneric
+                    ("/userswords/find", HttpMethod.GET, dbUserWord.userId).getParameter(View.USERWORD.toString());
             boolean updateFlag = false;
             for (DbUserWord dbUserWordDB:dbUserWords) {
                 if(dbUserWordDB.userId == dbUserWord.userId && dbUserWordDB.wordId==dbUserWord.wordId) {
-                    saveResult &= this.usersWordsRetriever.update(dbUserWord);
+                    Boolean updateResult = dispatcher.dispatchGeneric
+                            ("/userswords/update", HttpMethod.UPDATE, dbUserWord).getParameter(View.USERWORD.toString()) != null;
+                    saveResult &= updateResult;
                     updateFlag=true;
                     break;
                 }
             }
             if(!updateFlag)
-                saveResult &= this.usersWordsRetriever.save(dbUserWord);
+                saveResult &= dispatcher.dispatchGeneric
+                        ("/userswords/registernew", HttpMethod.POST, dbUserWord).getParameter(View.USERWORD.toString()) != null;
         }
         return  saveResult;
     }

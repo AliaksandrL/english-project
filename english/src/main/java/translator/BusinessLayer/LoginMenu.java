@@ -1,4 +1,4 @@
-package translator.web;
+package translator.BusinessLayer;
 
 import translator.util.StaticValues;
 

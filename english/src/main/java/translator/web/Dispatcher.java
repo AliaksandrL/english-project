@@ -1,22 +1,23 @@
-package belhard.web;
-
-import belhard.annotation.RequestMapping;
-import belhard.controller.UserController;
-import belhard.dao.UserDAO;
-import belhard.exception.IllegalRequestException;
-import belhard.service.UserService;
+package translator.web;
 
 import com.google.common.collect.ImmutableList;
-import org.apache.commons.lang3.StringUtils;
+import translator.DataLayer.DataRetrievers.TopicRetriever;
+import translator.DataLayer.DataRetrievers.UserRetriever;
+import translator.DataLayer.DataRetrievers.WordRetriever;
+import translator.DataLayer.DataRetrievers.UsersWordsRetriever;
+import translator.annotation.RequestMapping;
+import translator.controller.TopicController;
+import translator.controller.UserWordController;
+import translator.controller.UserController;
+import translator.controller.WordController;
+import translator.exceptions.IllegalRequestException;
+import translator.util.StringUtils;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Front Controller Dispatcher. Route request to controller
@@ -30,7 +31,10 @@ public class Dispatcher {
 
 	private Dispatcher() {
 		controllers = ImmutableList.<Controller>builder()
-				.add(new UserController(new UserService(new UserDAO())))
+				.add(new UserController(new UserRetriever()))
+				.add(new UserWordController(new UsersWordsRetriever()))
+				.add(new WordController(new WordRetriever()))
+				.add(new TopicController(new TopicRetriever()))
 				.build();
 	}
 
@@ -41,16 +45,36 @@ public class Dispatcher {
 		return dispatcher;
 	}
 
-	public ModelAndView dispatch(String url, String method, Map<String, String[]> parametersMap) {
-		HttpMethod httpMethod = HttpMethod.valueOf(method);
+	public ModelAndView dispatch(String url, HttpMethod httpMethod, Map<String, String[]> parametersMap) {
+
 		Target target = getTargetForInvoke(url, httpMethod);
 		if (target != null) {
-			fillTargetByParameters(target, parametersMap);
+			if (parametersMap != null && !parametersMap.isEmpty())
+				fillTargetByParameters(target, parametersMap);
 
 			Object result = invoker.invoke(target);
 			return (ModelAndView) result;
 		}
 		return new ModelAndView(HttpStatus.PAGE_NOT_FOUND);
+	}
+
+	public <TParam> ModelAndView dispatchGeneric(String url, HttpMethod httpMethod, TParam parameter) {
+
+		Target target = getTargetForGenericInvoke(url, httpMethod, parameter.getClass());
+		if (target != null) {
+			if (parameter != null)
+				fillTargetBySingleParameter(target, parameter);
+			Object result = invoker.invoke(target);
+			return (ModelAndView) result;
+		}
+		return new ModelAndView(HttpStatus.PAGE_NOT_FOUND);
+	}
+	private <TParam> void fillTargetBySingleParameter(Target target, TParam parameter) {
+		Parameter[] parameters = target.method.getParameters();
+		if(parameters.length!=1) {
+			return;
+		}
+		target.params[0] = parameter;
 	}
 
 	private void fillTargetByParameters(Target target, Map<String, String[]> parametersMap) {
@@ -62,6 +86,30 @@ public class Dispatcher {
 				target.params[i] = strings[0];
 			}
 		}
+	}
+
+	private <TParam> Target getTargetForGenericInvoke(String requestedUrl, HttpMethod requestedHttpMethod, Class<TParam> type) {
+		Target target = null;
+
+		for (Controller controller : controllers) {
+			Method[] methods = controller.getClass().getMethods();
+
+			for (Method method : methods) {
+				if (method.isAnnotationPresent(RequestMapping.class)) {
+					RequestMapping current = method.getAnnotation(RequestMapping.class);
+
+					if (requestedHttpMethod == current.method() && StringUtils.equals(requestedUrl, current.url())) {
+						target = new Target(controller, method);
+						target.params = (TParam[])Array.newInstance(type, 1);
+						break;
+					}
+				}
+			}
+			if (target != null) {
+				break;
+			}
+		}
+		return target;
 	}
 
 	private Target getTargetForInvoke(String requestedUrl, HttpMethod requestedHttpMethod) {

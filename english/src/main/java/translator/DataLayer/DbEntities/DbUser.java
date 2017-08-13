@@ -1,13 +1,14 @@
 package translator.DataLayer.DbEntities;
 
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
  * Created by Администратор on 23.06.2017.
  */
-public class DbUser {
+public class DbUser implements Serializable {
     public int id;
     public String userName;
     public String password;

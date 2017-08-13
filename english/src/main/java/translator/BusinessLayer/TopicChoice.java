@@ -1,12 +1,14 @@
-package translator.web;
+package translator.BusinessLayer;
 
 import translator.util.WordUtil;
-import translator.DataLayer.DataRetrievers.TopicRetriever;
-import translator.DataLayer.DataRetrievers.WordRetriever;
 import translator.DataLayer.DbEntities.DbTopic;
 import translator.DataLayer.DbEntities.DbWord;
 import translator.util.StaticValues;
+import translator.web.Dispatcher;
+import translator.web.HttpMethod;
+import translator.web.View;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -14,10 +16,10 @@ import java.util.Scanner;
  * Created by Администратор on 08.07.2017.
  */
 public class TopicChoice {
+    private Dispatcher dispatcher = Dispatcher.getInstance();
+
     public void ViewTopicChoice() {
-        WordRetriever wordRetriever = new WordRetriever();
-        TopicRetriever topicRetriever = new TopicRetriever();
-        Iterable<DbTopic> topics = topicRetriever.getAll();
+        Iterable<DbTopic> topics = (ArrayList<DbTopic>) dispatcher.dispatch("/topics/all", HttpMethod.GET, null).getParameter(View.TOPIC.toString());
         for(;;) {
             Iterator<DbTopic> iterator = topics.iterator();
             DbTopic topic;
@@ -36,7 +38,7 @@ public class TopicChoice {
             n = scanner.nextInt();
             if(n==0)
                 break;
-            topic = topicRetriever.find((long) n);
+            topic = (DbTopic) dispatcher.dispatchGeneric("/topics/find", HttpMethod.GET, (long)n).getParameter(View.TOPIC.toString());
 
             if (topic == null) {
                 System.out.println("!!!Попробуй еще раз!!! =)");
@@ -46,14 +48,15 @@ public class TopicChoice {
 
             System.out.println("    ==================================================");
             System.out.println("    Список слов для изучения:");
-            for (DbWord dbWord : wordRetriever.getByField(n)) {
+            ArrayList<DbWord> words = (ArrayList<DbWord>) dispatcher.dispatchGeneric("/words/find", HttpMethod.GET, n).getParameter(View.WORD.toString());
+            for (DbWord dbWord : words) {
                 System.out.println(String.format("%s - %s", dbWord.englishWord, dbWord.russianWord));
             }
             System.out.println("    ==================================================");
             scanner.next();
 
             WordUtil wordUtil = new WordUtil(StaticValues.getAuthenticatedUserId(), n);
-            wordUtil.topicName = topicRetriever.find(n).topicName;
+            wordUtil.topicName = ((DbTopic) dispatcher.dispatchGeneric("/topics/find", HttpMethod.GET, n).getParameter(View.TOPIC.toString())).topicName;
             boolean learnedCompletely = false;
             if (!wordUtil.isAnyUnlearnedWord())
                 learnedCompletely = true;

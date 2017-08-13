@@ -1,4 +1,4 @@
-package translator.web;
+package translator.BusinessLayer;
 
 /**
  * Created by Администратор on 13.07.2017.

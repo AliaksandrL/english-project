@@ -1,4 +1,4 @@
-package belhard.web;
+package translator.web;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +37,10 @@ public class ModelAndView {
 
 	public Map<String, Object> getParameters() {
 		return parameters;
+	}
+
+	public Object getParameter(String paramName) {
+		return parameters.get(paramName);
 	}
 
 	public int getStatus() {

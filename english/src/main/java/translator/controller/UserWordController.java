@@ -13,15 +13,15 @@ import translator.web.View;
 /**
  * Created by Администратор on 12.08.2017.
  */
-public class DbUserWordController implements Controller {
+public class UserWordController implements Controller {
     private UsersWordsRetriever usersWordsRetriever;
 
-    public DbUserWordController(UsersWordsRetriever usersWordsRetriever) {
+    public UserWordController(UsersWordsRetriever usersWordsRetriever) {
         this.usersWordsRetriever = usersWordsRetriever;
     }
 
     @RequestMapping(url = "/userswords/find", method = HttpMethod.GET)
-    public ModelAndView findUserByName(int userId) {
+    public ModelAndView findUserWordsByUserId(int userId) {
         ModelAndView view = new ModelAndView(View.USERWORD);
         Iterable<DbUserWord> dbUserWords;
         dbUserWords = usersWordsRetriever.getByField(userId);
@@ -30,7 +30,7 @@ public class DbUserWordController implements Controller {
     }
 
     @RequestMapping(url = "/userswords/update", method = HttpMethod.UPDATE)
-    public ModelAndView updateUser(DbUserWord dbUserWord) {
+    public ModelAndView updateUserWord(DbUserWord dbUserWord) {
         ModelAndView view = new ModelAndView(View.MAIN);
         if(usersWordsRetriever.update(dbUserWord))
             view.addParameter(View.USERWORD.toString(), dbUserWord);
@@ -40,7 +40,7 @@ public class DbUserWordController implements Controller {
     }
 
     @RequestMapping(url = "/userswords/registernew", method = HttpMethod.POST)
-    public ModelAndView registerNewUser(DbUserWord dbUserWord) {
+    public ModelAndView registerNewUserWord(DbUserWord dbUserWord) {
         ModelAndView view = new ModelAndView(View.MAIN);
         if(usersWordsRetriever.save(dbUserWord))
             view.addParameter(View.USERWORD.toString(), dbUserWord);

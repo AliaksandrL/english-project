@@ -1,16 +1,21 @@
 package translator.util;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
-import translator.web.LoginMenu;
-import translator.web.TopicChoice;
-import translator.web.Welcome;
+import translator.BusinessLayer.LoginMenu;
+import translator.BusinessLayer.TopicChoice;
+import translator.BusinessLayer.Welcome;
+import translator.web.Dispatcher;
+import translator.web.HttpMethod;
+import translator.web.ModelAndView;
 
 /**
  * Created by Lenovo on 10.06.2017.
  */
 public class Main {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		//Scanner scanner = new Scanner(System.in);
 //		String username, password;
 //		BasicConfigurator.configure();
 //		UserRetriever userRetriever = new UserRetriever();
@@ -49,10 +54,16 @@ public class Main {
 //		for (DbWord word : words) {
 //			System.out.println(word);
 //		}
-
 //		WordUtil wordUtil = new WordUtil(1,1);
 //		wordUtil.CheckWord();
 //
+//		Map<String, String[]> paramMap = new HashMap<String, String[]>();
+//		paramMap.put("arg0", new String[]{"sasha"});
+//		Dispatcher dispatcher = Dispatcher.getInstance();
+//		ModelAndView modelAndView = dispatcher.dispatch("/users/find", HttpMethod.GET, paramMap);
+//		System.out.println(modelAndView.getParameters().get("user"));
+
+
 		Welcome welcome = new Welcome();
 		welcome.ViewWelcome();
 
